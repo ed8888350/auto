@@ -1,0 +1,56 @@
+@import url(../fonts/stylesheet.css);
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: url(../images/bg.jpg);
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+}
+
+.header__top {
+    background-color: #0E0E0E;
+    height: 70px;
+}
+
+.header__content-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu__list {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.menu__list-link {
+    font-size: 16px;
+    color: #fff;
+}
+
+.header__button {
+    padding: 8px 20px;
+    font-size: 14px;
+    background-color: #D42E12;
+    border-radius: 2px;
+    color: #fff;
+}
+
+

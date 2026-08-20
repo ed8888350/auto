@@ -1527,3 +1527,6 @@ section {
 .fancybox__backdrop {
   opacity: .1;
 }
+#modalThanks {
+  width: 500px;
+}

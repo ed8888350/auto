@@ -67,17 +67,19 @@ brandsLink.forEach(button => {
 
     // Находим список и span с текстом внутри этого родителя
     const tagsList = parent.querySelector('.brands__wrapper');
-    const btnSpan = this.querySelector('span');
 
     // Переключаем класс .active у списка
     tagsList.classList.toggle('active');
+    tagsList.classList.toggle('hide');
 
     // Меняем текст в зависимости от наличия класса
     if (tagsList.classList.contains('active')) {
       button.classList.add('active');
+      button.classList.remove('hide');
       button.textContent = 'Свернуть';
     } else {
       button.classList.remove('active');
+      button.classList.add('hide');
       button.textContent = 'Смотреть все';
     }
   });

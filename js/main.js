@@ -15,6 +15,7 @@ const swiper = new Swiper('.swiper', {
 
 });
 
+// Ilya B edits start
 Fancybox.bind("[data-fancybox]", {
   closeButton: false,
   closeExisting: true, // Автоматически закроет старые окна при открытии нового
@@ -54,27 +55,57 @@ let im = new Inputmask({
 
 im.mask(inputs);
 
-const tabItem = document.querySelectorAll('.tabs__btn-item'); 
+const brandsLink = document.querySelectorAll('.brands__link');
+
+brandsLink.forEach(button => {
+  button.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // Находим родительский контейнер
+    const parent = this.closest('.brands');
+    if (!parent) return;
+
+    // Находим список и span с текстом внутри этого родителя
+    const tagsList = parent.querySelector('.brands__wrapper');
+    const btnSpan = this.querySelector('span');
+
+    // Переключаем класс .active у списка
+    tagsList.classList.toggle('active');
+
+    // Меняем текст в зависимости от наличия класса
+    if (tagsList.classList.contains('active')) {
+      button.classList.add('active');
+      button.textContent = 'Свернуть';
+    } else {
+      button.classList.remove('active');
+      button.textContent = 'Смотреть все';
+    }
+  });
+});
+// Ilya B edits end
+
+
+const tabItem = document.querySelectorAll('.tabs__btn-item');
 const tabContent = document.querySelectorAll('.tabs__content-item');
 
-const  open = (evt) => {
+const open = (evt) => {
   const tabTarget = evt.currentTarget;
   const button = tabTarget.dataset.button;
 
-  tabItem.forEach(function(item){
+  tabItem.forEach(function (item) {
     item.classList.remove('tabs__btn-item--active');
   });
 
   tabTarget.classList.add('tabs__btn-item--active');
 
-  tabContent.forEach(function(item){
+  tabContent.forEach(function (item) {
     item.classList.remove('tabs__content-item--active');
   });
 
   document.querySelector(`#${button}`).classList.add('tabs__content-item--active');
 }
 
-tabItem.forEach(function(element) {
+tabItem.forEach(function (element) {
   element.addEventListener('click', open);
 })
 

@@ -545,6 +545,10 @@ section {
   gap: 30px;
 }
 
+.brands__wrapper.active .brand:nth-child(n + 19) {
+  display: flex;
+}
+
 .brand {
   padding: 10px 0;
   display: flex;
@@ -559,6 +563,10 @@ section {
   box-shadow: 10px 31px 66px rgba(38, 40, 55, 0.1);
   border-radius: 10px;
   transition: .5s;
+}
+
+.brand:nth-child(n + 19) {
+  display: none;
 }
 
 .brand:hover {
@@ -1457,10 +1465,12 @@ section {
   border-radius: 20px;
   display: none;
 }
-.f-button.is-close-btn{
+
+.f-button.is-close-btn {
   background-color: transparent;
   border-radius: 8px;
   right: 0;
+
   &:hover {
     background-color: transparent;
     opacity: .85;

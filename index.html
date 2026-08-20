@@ -99,7 +99,7 @@
               </svg>
             </a>
           </div>
-          <button class="header__btn">Обратный звонок</button>
+          <button data-fancybox data-src="#modalOrder" class="header__btn">Обратный звонок</button>
         </div>
       </div>
     </div>
@@ -197,7 +197,7 @@
                     Всем клиентам при первичном посещении сервиса - работы по замене масла ДВС и масляного фильтра
                     БЕСПЛАТНО*.
                   </p>
-                  <button class="btn">
+                  <button class="btn" data-fancybox data-src="#modalAkcii">
                     Записаться по акции
                   </button>
                   <div class="trust">
@@ -507,7 +507,7 @@
                   заменили стойки и проверили ходовую
                 </p>
               </div>
-              <a href="#" class="works__text-btn">Записаться</a>
+              <a href="#" data-fancybox data-src="#modalOrder" class="works__text-btn">Записаться</a>
             </div>
           </div>
           <div class="works__block">
@@ -528,7 +528,7 @@
                   согласовали и провели ремонт электрики
                 </p>
               </div>
-              <a href="#" class="works__text-btn">Записаться</a>
+              <a href="#" data-fancybox data-src="#modalOrder" class="works__text-btn">Записаться</a>
             </div>
           </div>
           <div class="works__block">
@@ -549,7 +549,7 @@
                   согласовали и произвели замену необходимых деталей
                 </p>
               </div>
-              <a href="#" class="works__text-btn">Записаться</a>
+              <a href="#" data-fancybox data-src="#modalOrder" class="works__text-btn">Записаться</a>
             </div>
           </div>
         </div>
@@ -631,7 +631,7 @@
             <h3 class="cta__cform-title">Получить расчёт</h3>
             <p class="cta__cform-subtitle">Заполните форму — пришлём подбор и цену в Telegram</p>
             <input class="qfield" id="cf-name" placeholder="Ваше имя">
-            <input class="qfield" id="cf-phone" placeholder="+7 (___) ___-__-__" inputmode="tel">
+            <input class="qfield" type="tel" id="cf-phone" placeholder="+7 (___) ___-__-__" inputmode="tel">
             <button class="qsubmit" id="cf-submit">Отправить заявку</button>
             <div class="privacy">
               Нажимая кнопку, вы соглашаетесь с
@@ -1063,7 +1063,7 @@
               <p class="footer__button-title">
                 Заказать обратный звонок
               </p>
-              <button class="btn footer__btn">Обратный звонок</button>
+              <button data-fancybox data-src="#modalOrder" class="btn footer__btn">Обратный звонок</button>
             </div>
           </div>
           <div class="footer__column">
@@ -1143,7 +1143,59 @@
     </div>
   </footer>
 
+  <!-- modalOrder -->
+  <div class="modal" id="modalOrder">
 
+    <div class="modalHead">
+      <button data-fancybox-close class="f-button is-close-btn" title="Close"><svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" tabindex="-1">
+          <path d="M20 20L4 4m16 0L4 20"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modalContent">
+      <div class="cta__cform">
+        <h3 class="cta__cform-title">Получить расчёт</h3>
+        <p class="cta__cform-subtitle">Заполните форму — пришлём подбор и цену в Telegram</p>
+        <input class="qfield" id="cf-name" placeholder="Ваше имя">
+        <input class="qfield" type="tel" id="cf-phone" placeholder="+7 (___) ___-__-__" inputmode="tel">
+        <button class="qsubmit" id="cf-submit">Отправить заявку</button>
+        <div class="privacy">
+          Нажимая кнопку, вы соглашаетесь с
+          <a href="#" target="_blank" rel="noopener">политикой конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modalAkcii -->
+  <div class="modal" id="modalAkcii">
+
+    <div class="modalHead">
+      <button data-fancybox-close class="f-button is-close-btn" title="Close"><svg xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" tabindex="-1">
+          <path d="M20 20L4 4m16 0L4 20"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modalContent">
+      <div class="cta__cform">
+        <h3 class="cta__cform-title">Записаться по акции</h3>
+        <p class="cta__cform-subtitle">Заполните форму — пришлём подбор и цену в Telegram</p>
+        <input class="qfield" id="cf-name" placeholder="Ваше имя">
+        <input class="qfield" id="cf-phone" type="tel" placeholder="+7 (___) ___-__-__" inputmode="tel">
+        <button class="qsubmit" id="cf-submit">Отправить заявку</button>
+        <div class="privacy">
+          Нажимая кнопку, вы соглашаетесь с
+          <a href="#" target="_blank" rel="noopener">политикой конфиденциальности</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/inputmask.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="js/fancybox.umd.js"></script>
   <script src="js/main.js"></script>

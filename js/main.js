@@ -20,6 +20,40 @@ Fancybox.bind("[data-fancybox]", {
   closeExisting: true, // Автоматически закроет старые окна при открытии нового
 });
 
+let inputs = document.querySelectorAll('input[type="tel"]');
+let im = new Inputmask({
+  mask: '+7 (999) 999-99-99',
+  onBeforeWrite: function (event, buffer, caretPos, opts) {
+    // console.log(caretPos);
+    // Проверяем:
+    // 1. Позиция каретки (caretPos) равна 5 (вторая цифра в "99")
+    // 2. Нажата клавиша "8"
+    if (caretPos === 5 && event.key === '8') {
+      event.preventDefault(); // Запрещаем ввод     
+      console.log("Ввод 8 в этой позиции запрещен!");
+      return {
+        refreshFromBuffer: true,
+        buffer: [],
+        caret: 4
+      };
+    }
+  },
+  onBeforePaste: function (pastedValue, opts) {
+    // Удаляем всё, кроме цифр
+    var processedValue = pastedValue.replace(/\D/g, "");
+
+    // Если первая цифра 7 или 8 и в строке 11 цифр, убираем первую
+    if (processedValue.length === 11 && (processedValue[0] === '7' || processedValue[0] === '8')) {
+      return processedValue.substring(1);
+    }
+
+    return pastedValue;
+  }
+
+});
+
+im.mask(inputs);
+
 const tabItem = document.querySelectorAll('.tabs__btn-item'); 
 const tabContent = document.querySelectorAll('.tabs__content-item');
 

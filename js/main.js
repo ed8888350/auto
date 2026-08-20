@@ -15,6 +15,11 @@ const swiper = new Swiper('.swiper', {
 
 });
 
+Fancybox.bind("[data-fancybox]", {
+  closeButton: false,
+  closeExisting: true, // Автоматически закроет старые окна при открытии нового
+});
+
 const tabItem = document.querySelectorAll('.tabs__btn-item'); 
 const tabContent = document.querySelectorAll('.tabs__content-item');
 

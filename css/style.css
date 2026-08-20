@@ -1104,6 +1104,7 @@ section {
 }
 
 .maps__card {
+  
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -1162,7 +1163,7 @@ section {
 }
 
 .maps__map img {
-  width: 630px;
+  height: 390px;
 }
 
 .maps__line {
@@ -1215,9 +1216,14 @@ section {
   gap: 10px;
 }
 
-.footer__address-company-phone {
+.footer__address-phone {
   font-size: 16px;
   font-weight: 600;
+  transition: .3s;
+}
+
+.footer__address-phone:hover {
+  color: var(--color-orange);
 }
 
 .footer__social-title,
@@ -1297,6 +1303,23 @@ section {
   }
 
 }
+
+/* 995px */
+
+@media(max-width: 995px) {
+
+  .address__street,
+  .address__time,
+  .social__block {
+    display: none;
+  }
+
+  .header__logo {
+  margin-right: 30px;
+}
+
+}
+
 /* 770px */
 @media(max-width: 770px) {
 
@@ -1423,4 +1446,20 @@ section {
     background: #000000;
   }
 
+  .sec {
+  padding: 50px 0;
+}
+}
+
+/* 700px */
+
+@media (max-width: 700px) {
+
+  .header__btn {
+    display: none;
+  }
+
+  .header__top-wrapper {
+    justify-content: space-evenly;
+  }
 }

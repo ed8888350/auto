@@ -1,16 +1,18 @@
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.introSlider', {
   // Optional parameters
   loop: true,
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: '.introSlider .swiper-pagination',
+    clickable: true,
+    type: 'bullets',
   },
 
   // Navigation arrows
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.introSlider .swiper-button-next',
+    prevEl: '.introSlider .swiper-button-prev',
   },
 
 });
@@ -84,6 +86,78 @@ brandsLink.forEach(button => {
     }
   });
 });
+
+const worksSwiper = new Swiper('.worksSlider', {
+  // Optional parameters
+  loop: false,
+  slidesPerView: 3,
+  spaceBetween: 26,
+  autoHeight: false,
+  // If we need pagination
+  pagination: {
+    el: '.worksSlider .swiper-pagination',
+    clickable: true,
+    type: 'bullets',
+  },
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false, // Не останавливать после клика
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 8,
+    },
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+    1200: {
+      slidesPerView: 3,
+      spaceBetween: 26,
+    },
+  },
+  // Navigation arrows
+  // navigation: {
+  //   nextEl: '.worksSlider .swiper-button-next',
+  //   prevEl: '.worksSlider .swiper-button-prev',
+  // },
+
+});
+
+// Инициализация слайдера reviewsSlider
+document.querySelectorAll('.reviewsSlider').forEach(n => {
+  const mySwiperReviews = new Swiper(n, {
+    slidesPerView: 5,
+    spaceBetween: 24,
+    speed: 600,
+    autoplay: false,
+    pagination: {
+      el: n?.closest('.sliderW').querySelector('.swiper-pagination'),
+      clickable: true,
+      type: 'bullets',
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 8,
+      },
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 18,
+      },
+    },
+  });
+});
+
 // Ilya B edits end
 
 
